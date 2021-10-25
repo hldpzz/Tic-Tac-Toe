@@ -2,8 +2,10 @@
 import Button from '@restart/ui/esm/Button';
 import { Row } from 'react-bootstrap';
 import './App.css';
+import './boardChecker'
 
 import React, { Component } from 'react'
+import { boardChecker } from './boardChecker';
 
 export default class App extends Component {
   constructor(props) {
@@ -18,6 +20,14 @@ export default class App extends Component {
   }
 
   handleClick = function(dx,dy){
+
+    if(this.state.gameState!='running'){
+      return
+    }
+    if(this.state.gameMatrix[dx][dy]!=null){
+      return
+    }
+
     if(this.state.player=='X'){
       let intMatrix = this.state.gameMatrix
       intMatrix[dx][dy]='X'
@@ -32,7 +42,23 @@ export default class App extends Component {
         player:'X'
       })
     }
-    console.log(this.state.gameMatrix)
+    if(boardChecker(this.state.gameMatrix)){
+      if(this.state.player=='X'){
+        this.setState({
+          gameState:'X won'
+        })
+      }else{
+        this.setState({
+          gameState:'O won'
+        })
+      }
+    }
+    if(boardChecker(this.state.gameMatrix)=='draw'){
+      this.setState({
+        gameState:'draw'
+      })
+    }
+
   }
   
   render() {
