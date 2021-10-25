@@ -6,20 +6,20 @@ import './App.css';
 function App() {
   return (
     <div className='App'>
-      <Row>
-        <Button>  </Button>
-        <Button></Button>
-        <Button></Button>
+      <Row className='Row'>
+        <Button className='Btn'></Button>
+        <Button className='Btn'></Button>
+        <Button className='Btn'></Button>
       </Row>
-      <Row>
-      <Button></Button>
-      <Button></Button>
-      <Button></Button>
+      <Row className='Row'>
+        <Button className='Btn'></Button>
+        <Button className='Btn'></Button>
+        <Button className='Btn'></Button>
       </Row>
-      <Row>
-      <Button></Button>
-      <Button></Button>
-      <Button></Button>
+      <Row className='Row'>
+        <Button className='Btn'></Button>
+        <Button className='Btn'></Button>
+        <Button className='Btn'></Button>
       </Row>
     </div>
   );
