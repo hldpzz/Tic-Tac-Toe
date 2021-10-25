@@ -1,10 +1,26 @@
 
+import Button from '@restart/ui/esm/Button';
+import { Row } from 'react-bootstrap';
 import './App.css';
 
 function App() {
   return (
-    <div>
-      <h1>This is the APP</h1>
+    <div className='App'>
+      <Row>
+        <Button>  </Button>
+        <Button></Button>
+        <Button></Button>
+      </Row>
+      <Row>
+      <Button></Button>
+      <Button></Button>
+      <Button></Button>
+      </Row>
+      <Row>
+      <Button></Button>
+      <Button></Button>
+      <Button></Button>
+      </Row>
     </div>
   );
 }
